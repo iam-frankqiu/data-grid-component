@@ -8,7 +8,7 @@ export const generateGmail = (): string => {
   return string + "@gmail.com";
 };
 
-export function randEnumValue<T extends object>(enumObj: T): T[keyof T] {
+export function generateEnumValue<T extends object>(enumObj: T): T[keyof T] {
   const enumValues = Object.values(enumObj);
   const index = Math.floor(Math.random() * enumValues.length);
   return enumValues[index];

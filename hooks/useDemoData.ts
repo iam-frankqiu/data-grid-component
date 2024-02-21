@@ -1,7 +1,7 @@
 import { MAX_NUMBER, MIN_NUMBER } from "@/constants";
 import { StatusEnum } from "@/enums";
 import { PaymentType } from "@/types";
-import { generateGmail, randEnumValue } from "@/utils";
+import { generateGmail, generateEnumValue } from "@/utils";
 import { useEffect, useState } from "react";
 
 export function useMemoData() {
@@ -14,7 +14,7 @@ export function useMemoData() {
     const arr:PaymentType[] = new Array(total).fill(total).map((_item, index) => {
       const temp: PaymentType = {
         id: index + 1,
-        status: randEnumValue(StatusEnum),
+        status: generateEnumValue(StatusEnum),
         amount: Math.floor(Math.random() * 1000),
         email: generateGmail(),
       };
